@@ -1,0 +1,27 @@
+<!DOCTYPE debitCredit [
+  <!ELEMENT debitCredit (cardInfo*)>
+  <!ELEMENT cardInfo (holderName, cardNumber,billingAddress, expiryDate, CVV)>
+  <!ELEMENT holderName (#PCDATA)>
+  <!ELEMENT cardNumber (#PCDATA)>
+  <!ELEMENT billingAddress (#PCDATA)>
+  <!ELEMENT cvv (#PCDATA)>
+]>
+
+<debitCredit>
+  <cardInfo>
+    <holderName>John Smith</holderName>
+    <cardNumber>5748384739582957</cardNumber>
+    <expiryDate>06/25</expiryDate>
+    <cvv>321</cvv>
+    <billingAddress>11 Lime Street, Grand Canal Dock</billingAddress>
+  </cardInfo>
+  
+  <cardInfo>
+    <holderName>Mary Murphy</holderName>
+    <cardNumber>9013284528563965</cardNumber>
+    <expiryDate>01/27</expiryDate>
+    <cvv>597</cvv>
+    <billingAddress>81 Ormond Road, Drumcondra</billingAddress>
+  </cardInfo>
+</debitCredit>
+
