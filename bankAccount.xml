@@ -1,0 +1,59 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+
+<!DOCTYPE BankAccountDetails [
+  <!ELEMENT BankAccountDetails (account*)>
+  <!ELEMENT account (accountNumber,bank,BIC,currency,transactionLimit)>
+  <!ELEMENT accountNumber (#PCDATA)>
+  <!ELEMENT bank (#PCDATA)>
+  <!ELEMENT iban (#PCDATA)>
+  <!ELEMENT accountType (#PCDATA)>
+  <!ELEMENT BIC (#PCDATA)>
+  <!ELEMENT currency (#PCDATA)>
+  <!ELEMENT transactionLimit (limitPerTransaction?,dailyTransactionLimit?)>
+  <!ELEMENT limitPerTransaction (#PCDATA)>
+  <!ELEMENT dailyTransactionLimit (#PCDATA)>
+
+  <!ATTLIST bank sortCode CDATA #REQUIRED>
+  <!ATTLIST account donorId CDATA #REQUIRED>
+
+
+]>
+
+
+
+<BankAccountDetails>
+
+ 
+
+  <account donorId = "1">
+    <accountNumber></accountNumber>
+    <bank sortCode="654321">AIB</bank>
+    <iban>IE76AIBK12345678901234</iban>
+    <accountType>Checking</accountType>
+    <BIC>AIBKIE2D</BIC>
+    <currency>EUR</currency>
+    <transactionLimit>
+      <limitPerTransaction>2000.00</;imitPerTransaction> 
+      <dailyTransactionLimit>10000.00</dailyTransactionLimit> 
+    </transactionLimit>
+  </account>
+
+  <account donorId = "2">
+    <accountNumber></accountNumber>
+    <bank sortCode="654321">AIB</bank>
+    <iban>IE76AIBK12345678901234</iban>
+    <accountType>Checking</accountType>
+    <BIC>AIBKIE2D</BIC>
+    <currency>EUR</currency>
+    <transactionLimit>
+      <limitPerTransaction>2000.00</;imitPerTransaction> 
+      <dailyTransactionLimit>10000.00</dailyTransactionLimit> 
+    </transactionLimit>
+  </account>
+
+
+
+
+
+
+</BankAccountDetails>
