@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE donations [
+  <!ELEMENT donations (donation*)>
+  <!ATTLIST donation donorId CDATA #REQUIRED>
+  <!ELEMENT donation (donationTime, payment)>
+
+  <!ELEMENT donationTime (year, month, day, hour, minute)>
+  <!ELEMENT year (#PCDATA)>
+  <!ELEMENT month (#PCDATA)>
+  <!ELEMENT day (#PCDATA)>
+  <!ELEMENT hour (#PCDATA)>
+  <!ELEMENT minute (#PCDATA)>
+
+  <!ELEMENT payment (currency, amount, paymentType)>
+  <!ELEMENT currency (#PCDATA)>
+  <!ELEMENT amount (#PCDATA)>
+  <!ELEMENT paymentType (#PCDATA) >
+]>
+
+<donations>
+  <donation donorId="1">
+    <donationTime>
+      <year>2024</year>
+      <month>05</month>
+      <day>12</day>
+      <hour>15</hour>
+      <minute>30</minute>
+    </donationTime>
+    <payment>
+      <currency>EUR</currency>
+      <amount>500</amount>
+      <paymentType>DEBITCARD</paymentType>
+    </payment>
+  </donation>
+
+  <donation donorId="1">
+    <donationTime>
+      <year>2024</year>
+      <month>11</month>
+      <day>18</day>
+      <hour>17</hour>
+      <minute>00</minute>
+    </donationTime>
+    <payment>
+      <currency>EUR</currency>
+      <amount>200</amount>
+      <paymentType>CREDITCARD</paymentType>
+    </payment>
+  </donation>
+
+  <donation donorId="3">
+    <donationTime>
+      <year>2023</year>
+      <month>09</month>
+      <day>22</day>
+      <hour>13</hour>
+      <minute>00</minute>
+    </donationTime>
+    <payment>
+      <currency>EUR</currency>
+      <amount>1000</amount>
+      <paymentType>TRANSFER</paymentType>
+    </payment>
+  </donation>
+
+  <donation donorId="2">
+    <donationTime>
+      <year>2024</year>
+      <month>01</month>
+      <day>09</day>
+      <hour>10</hour>
+      <minute>00</minute>
+    </donationTime>
+    <payment>
+      <currency>EUR</currency>
+      <amount>10</amount>
+      <paymentType>DEBITCARD</paymentType>
+    </payment>
+  </donation>
+
+  <donation donorId="1">
+    <donationTime>
+      <year>2024</year>
+      <month>03</month>
+      <day>23</day>
+      <hour>07</hour>
+      <minute>45</minute>
+    </donationTime>
+    <payment>
+      <currency>EUR</currency>
+      <amount>100</amount>
+      <paymentType>CREDITCARD</paymentType>
+    </payment>
+  </donation>
+</donations>
