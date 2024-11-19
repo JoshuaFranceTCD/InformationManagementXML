@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PaymentSystem>
+    <Attributes>
+        <MoneyReceived type="int">0</MoneyReceived>
+        <Currency type="string">EUR</Currency>
+    </Attributes>
+    <Methods>
+        <ReceivePayment>
+            <TimeDonated>15/11/2024 17:35</TimeDonated>
+            <AmountDonated>1000</AmountDonated>
+            <Donor>Gerard</Donor>
+        </ReceivePayment>
+    </Methods>
+    <OrganisationBankAccount>
+        <CompanyName>Amnesity</CompanyName>
+        <IBAN>GB29NWBK60161331926819</IBAN>
+        <BIC>NWBKGB2L</BIC>
+        <Currency>EUR</Currency>
+        <Cash>100000</Cash>
+    </OrganisationBankAccount>
+</PaymentSystem>
+
+<!DOCTYPE PaymentSystem [
+    <!ELEMENT PaymentSystem (Attributes, Methods, OrganisationBankAccount)>
+
+    <!ELEMENT Attributes (MoneyReceived, Currency)>
+    <!ELEMENT MoneyReceived (#PCDATA)>
+    <!ATTLIST MoneyReceived type CDATA #REQUIRED>
+    <!ELEMENT Currency (#PCDATA)>
+    <!ATTLIST Currency type CDATA #REQUIRED>
+
+    <!ELEMENT Methods (ReceivePayment)>
+    <!ELEMENT ReceivePayment (TimeDonated, AmountDonated, Donor)>
+    <!ELEMENT TimeDonated (#PCDATA)>
+    <!ELEMENT AmountDonated (#PCDATA)>
+    <!ELEMENT Donor (#PCDATA)>
+
+    <!ELEMENT OrganisationBankAccount (CompanyName, IBAN, BIC, Currency, Cash)>
+    <!ELEMENT CompanyName (#PCDATA)>
+    <!ELEMENT IBAN (#PCDATA)>
+    <!ELEMENT BIC (#PCDATA)>
+    <!ELEMENT Cash (#PCDATA)>
+]>
+
