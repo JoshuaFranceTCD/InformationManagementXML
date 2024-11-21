@@ -33,7 +33,7 @@
     <BIC>AIBKIE2D</BIC>
     <currency>EUR</currency>
     <transactionLimit>
-      <limitPerTransaction>2000.00</;imitPerTransaction> 
+      <limitPerTransaction>2000.00</limitPerTransaction> 
       <dailyTransactionLimit>10000.00</dailyTransactionLimit> 
     </transactionLimit>
   </account>
@@ -46,7 +46,7 @@
     <BIC>AIBKIE2D</BIC>
     <currency>EUR</currency>
     <transactionLimit>
-      <limitPerTransaction>2000.00</;imitPerTransaction> 
+      <limitPerTransaction>2000.00</limitPerTransaction> 
       <dailyTransactionLimit>10000.00</dailyTransactionLimit> 
     </transactionLimit>
   </account>

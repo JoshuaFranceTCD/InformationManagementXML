@@ -1,24 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PaymentSystem>
-    <Attributes>
-        <MoneyReceived type="int">0</MoneyReceived>
-        <Currency type="string">EUR</Currency>
-    </Attributes>
-    <Methods>
-        <ReceivePayment>
-            <TimeDonated>15/11/2024 17:35</TimeDonated>
-            <AmountDonated>1000</AmountDonated>
-            <Donor>Gerard</Donor>
-        </ReceivePayment>
-    </Methods>
-    <OrganisationBankAccount>
-        <CompanyName>Amnesity</CompanyName>
-        <IBAN>GB29NWBK60161331926819</IBAN>
-        <BIC>NWBKGB2L</BIC>
-        <Currency>EUR</Currency>
-        <Cash>100000</Cash>
-    </OrganisationBankAccount>
-</PaymentSystem>
 
 <!DOCTYPE PaymentSystem [
     <!ELEMENT PaymentSystem (Attributes, Methods, OrganisationBankAccount)>
@@ -29,10 +9,10 @@
     <!ELEMENT Currency (#PCDATA)>
     <!ATTLIST Currency type CDATA #REQUIRED>
 
-    <!ELEMENT Methods (ReceivePayment)>
-    <!ELEMENT ReceivePayment (TimeDonated, AmountDonated, Donor)>
+    <!ELEMENT Methods (payment)>
+    <!ELEMENT payment (TimeDonated, amount, Donor)>
     <!ELEMENT TimeDonated (#PCDATA)>
-    <!ELEMENT AmountDonated (#PCDATA)>
+    <!ELEMENT amount (#PCDATA)>
     <!ELEMENT Donor (#PCDATA)>
 
     <!ELEMENT OrganisationBankAccount (CompanyName, IBAN, BIC, Currency, Cash)>
@@ -41,4 +21,27 @@
     <!ELEMENT BIC (#PCDATA)>
     <!ELEMENT Cash (#PCDATA)>
 ]>
+
+<PaymentSystem>
+    <Attributes>
+        <MoneyReceived type="int">0</MoneyReceived>
+        <Currency type="string">EUR</Currency>
+    </Attributes>
+    <Methods>
+        <payment>
+            <TimeDonated>15/11/2024 17:35</TimeDonated>
+            <amount>1000</amount>
+            <Donor>Gerard</Donor>
+        </payment>
+    </Methods>
+    <OrganisationBankAccount>
+        <CompanyName>Amnesity</CompanyName>
+        <IBAN>GB29NWBK60161331926819</IBAN>
+        <BIC>NWBKGB2L</BIC>
+        <Currency>EUR</Currency>
+        <Cash>100000</Cash>
+    </OrganisationBankAccount>
+</PaymentSystem>
+
+
 
