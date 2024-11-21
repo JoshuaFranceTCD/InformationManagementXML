@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE donors [ 
+<!ELEMENT donors (donor*)>
+
+<!ATTLIST donor id CDATA #IMPLIED>
+<!ELEMENT donor (name, email, phoneNumber)>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT phoneNumber (countryCode, number)>
+
+<!ELEMENT countryCode (#PCDATA)>
+<!ELEMENT number (#PCDATA)>
+]>
+
+<donors>
+    <donor id="1">
+        <name>Justin Case</name>
+        <email>
+            jcase@example.com
+        </email>
+        <phoneNumber>
+            <countryCode>+353</countryCode>
+            <number>87 1234</number>
+        </phoneNumber>
+    </donor>
+    <donor id="2">
+        <name>Al Beback</name>
+        <email>
+            abeback@example.com
+        </email>
+        <phoneNumber>
+            <countryCode>+353</countryCode>
+            <number>87 5678</number>
+        </phoneNumber>
+    </donor>
+    <donor id="3">
+        <name>Holly Wood</name>
+        <email>
+            hwood@example.com
+        </email>
+        <phoneNumber>
+            <countryCode>+33</countryCode>
+            <number>7 12 34 56 78</number>
+        </phoneNumber>
+    </donor>
+</donors>
