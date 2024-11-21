@@ -6,4 +6,4 @@ return
           <email>{string($donor/email)}</email>
           <countryCode>{string($donor/phoneNumber/countryCode)}</countryCode>
           <number>{string($donor/phoneNumber/number)}</number>
-          </donorinfo>
+    </donorinfo>
