@@ -1,4 +1,4 @@
-for $donor in doc("donors.xml")/donors/donor
+for $donor in /donors/donor
   where $donor/@id="1"
 return 
     <donorinfo>

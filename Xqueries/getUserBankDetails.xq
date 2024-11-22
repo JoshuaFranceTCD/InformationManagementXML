@@ -1,4 +1,4 @@
-for $d in doc("bankAccount.xml")/BankAccountDetails/account
+for $d in /BankAccountDetails/account
   where $d/@donorId="1"
 return
     <nameAndBank>
