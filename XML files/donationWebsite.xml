@@ -1,0 +1,58 @@
+<?xml version='1.0' standalone='yes' ?>
+<!DOCTYPE AmnestyDonationWebsite [
+    <!ELEMENT AmnestyDonationWebsite (WebsiteDetails, Campaigns, DonorLinks)>
+    <!ELEMENT WebsiteDetails (Title, Description, LaunchDate)>
+    <!ELEMENT Title (#PCDATA)>
+    <!ELEMENT Description (#PCDATA)>
+    <!ELEMENT LaunchDate (#PCDATA)>
+
+    <!ELEMENT Campaigns (Campaign*)>
+    <!ELEMENT Campaign (Name, Goal, Donations)>
+    <!ATTLIST Campaign id CDATA #REQUIRED>
+    <!ELEMENT Name (#PCDATA)>
+    <!ELEMENT Goal (#PCDATA)>
+    <!ELEMENT Donations (DonationID*)>
+    <!ELEMENT DonationID (#PCDATA)>
+
+    <!ELEMENT DonorLinks (DonorLink*)>
+    <!ELEMENT DonorLink (DonorID, AssociatedDonation)>
+    <!ELEMENT DonorID (#PCDATA)>
+    <!ELEMENT AssociatedDonation (#PCDATA)>
+]>
+
+<AmnestyDonationWebsite>
+    <WebsiteDetails>
+        <Title>Amnesty International Donation Portal</Title>
+        <Description>Support human rights campaigns through secure donations.</Description>
+        <LaunchDate>2024-01-01</LaunchDate>
+    </WebsiteDetails>
+
+    <Campaigns>
+        <Campaign id="C1">
+            <Name>Freedom for All</Name>
+            <Goal>100000 EUR</Goal>
+            <Donations>
+                <DonationID>D1</DonationID>
+                <DonationID>D2</DonationID>
+            </Donations>
+        </Campaign>
+        <Campaign id="C2">
+            <Name>Education for Change</Name>
+            <Goal>50000 EUR</Goal>
+            <Donations>
+                <DonationID>D3</DonationID>
+            </Donations>
+        </Campaign>
+    </Campaigns>
+
+    <DonorLinks>
+        <DonorLink>
+            <DonorID>1</DonorID>
+            <AssociatedDonation>D1</AssociatedDonation>
+        </DonorLink>
+        <DonorLink>
+            <DonorID>3</DonorID>
+            <AssociatedDonation>D3</AssociatedDonation>
+        </DonorLink>
+    </DonorLinks>
+</AmnestyDonationWebsite>
