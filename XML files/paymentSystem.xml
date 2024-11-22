@@ -3,33 +3,32 @@
 <!DOCTYPE PaymentSystem [
     <!ELEMENT PaymentSystem (Attributes, Methods, OrganisationBankAccount)>
 
-    <!ELEMENT Attributes (MoneyReceived, Currency)>
+    <!ELEMENT Attributes (MoneyReceived)>
     <!ELEMENT MoneyReceived (#PCDATA)>
     <!ATTLIST MoneyReceived type CDATA #REQUIRED>
-    <!ELEMENT Currency (#PCDATA)>
-    <!ATTLIST Currency type CDATA #REQUIRED>
 
-    <!ELEMENT Methods (payment)>
+    <!ELEMENT Methods (payment*)>
     <!ELEMENT payment (TimeDonated, amount, Donor)>
     <!ELEMENT TimeDonated (#PCDATA)>
     <!ELEMENT amount (#PCDATA)>
     <!ELEMENT Donor (#PCDATA)>
 
-    <!ELEMENT OrganisationBankAccount (CompanyName, IBAN, BIC, Currency, Cash)>
+    <!ELEMENT OrganisationBankAccount (CompanyName, IBAN, BIC, Cash)>
     <!ELEMENT CompanyName (#PCDATA)>
     <!ELEMENT IBAN (#PCDATA)>
     <!ELEMENT BIC (#PCDATA)>
     <!ELEMENT Cash (#PCDATA)>
+
+    <!ATTLIST PaymentSystem currency CDATA #REQUIRED>
 ]>
 
-<PaymentSystem>
+<PaymentSystem currency="EUR">
     <Attributes>
         <MoneyReceived type="int">0</MoneyReceived>
-        <Currency type="string">EUR</Currency>
     </Attributes>
     <Methods>
         <payment>
-            <TimeDonated>15/11/2024 17:35</TimeDonated>
+            <TimeDonated>15/11/2024 17:35</TimeDonated> 
             <amount>1000</amount>
             <Donor>Gerard</Donor>
         </payment>
@@ -38,7 +37,6 @@
         <CompanyName>Amnesity</CompanyName>
         <IBAN>GB29NWBK60161331926819</IBAN>
         <BIC>NWBKGB2L</BIC>
-        <Currency>EUR</Currency>
         <Cash>100000</Cash>
     </OrganisationBankAccount>
 </PaymentSystem>
