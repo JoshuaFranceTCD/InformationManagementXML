@@ -15,5 +15,5 @@ let $a := if(local:yearly_difference($x,$y)>= 0) {"+"} else {"-"}
 return <donation> 
 <year1>Total of Dontations in 2023 = {$x}</year1>
 <year2>2024 Dontation = {$y}</year2>
-<donationIncrease> Percentage increase/decrease in donations from 2023 to 204 is {$a} {local:yearly_difference($x,$y)}%</donationIncrease>
+<donationIncrease> Percentage increase/decrease in donations from 2023 to 2024 is {$a} {local:yearly_difference($x,$y)}%</donationIncrease>
 </donation>
