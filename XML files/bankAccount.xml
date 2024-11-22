@@ -2,7 +2,7 @@
 
 <!DOCTYPE BankAccountDetails [
   <!ELEMENT BankAccountDetails (account*)>
-  <!ELEMENT account (accountNumber,bank,BIC,currency,transactionLimit)>
+  <!ELEMENT account (accountNumber,bank,iban,accountType,BIC,currency,transactionLimit)>
   <!ELEMENT accountNumber (#PCDATA)>
   <!ELEMENT bank (#PCDATA)>
   <!ELEMENT iban (#PCDATA)>
@@ -22,38 +22,43 @@
 
 
 <BankAccountDetails>
-
- 
-
-  <account donorId = "1">
-    <accountNumber></accountNumber>
-    <bank sortCode="654321">AIB</bank>
-    <iban>IE76AIBK12345678901234</iban>
+  <account donorId="1">
+    <accountNumber>12345678</accountNumber>
+    <bank sortCode="931073">AIB</bank>
+    <iban>IE12AIBK93107312345678</iban>
     <accountType>Checking</accountType>
     <BIC>AIBKIE2D</BIC>
     <currency>EUR</currency>
     <transactionLimit>
-      <limitPerTransaction>2000.00</limitPerTransaction> 
-      <dailyTransactionLimit>10000.00</dailyTransactionLimit> 
+      <limitPerTransaction>2000.00</limitPerTransaction>
+      <dailyTransactionLimit>10000.00</dailyTransactionLimit>
     </transactionLimit>
   </account>
 
-  <account donorId = "2">
-    <accountNumber></accountNumber>
-    <bank sortCode="654321">AIB</bank>
-    <iban>IE76AIBK12345678901234</iban>
+  <account donorId="2">
+    <accountNumber>87654321</accountNumber>
+    <bank sortCode="931073">AIB</bank>
+    <iban>IE76AIBK93107387654321</iban>
     <accountType>Checking</accountType>
     <BIC>AIBKIE2D</BIC>
     <currency>EUR</currency>
     <transactionLimit>
-      <limitPerTransaction>2000.00</limitPerTransaction> 
-      <dailyTransactionLimit>10000.00</dailyTransactionLimit> 
+      <limitPerTransaction>3000.00</limitPerTransaction>
+      <dailyTransactionLimit>15000.00</dailyTransactionLimit>
     </transactionLimit>
   </account>
 
-
-
-
-
-
+  <account donorId="3">
+    <accountNumber>12345678901</accountNumber>
+    <bank sortCode="990206">BNP Paribas</bank>
+    <iban>FR7612345678901234567890123</iban>
+    <accountType>Checking</accountType>
+    <BIC>BNPAFRPP</BIC>
+    <currency>EUR</currency>
+    <transactionLimit>
+      <limitPerTransaction>5000.00</limitPerTransaction>
+      <dailyTransactionLimit>25000.00</dailyTransactionLimit>
+    </transactionLimit>
+  </account>
+  
 </BankAccountDetails>
