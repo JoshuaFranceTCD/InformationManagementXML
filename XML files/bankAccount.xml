@@ -2,22 +2,27 @@
 
 <!DOCTYPE BankAccountDetails [
   <!ELEMENT BankAccountDetails (account*)>
-  <!ELEMENT account (accountNumber,bank,iban,accountType,BIC,currency,transactionLimit)>
+    <!--0 or more accounts are logged into the system-->
+
+  <!ELEMENT account (accountNumber,bank,iban?, routingNumber?,accountType,BIC,currency,transactionLimit?)>
+  <!--Banks in the US do not use IBANs but use routing numbers-->
+
   <!ELEMENT accountNumber (#PCDATA)>
   <!ELEMENT bank (#PCDATA)>
   <!ELEMENT iban (#PCDATA)>
   <!ELEMENT accountType (#PCDATA)>
   <!ELEMENT BIC (#PCDATA)>
   <!ELEMENT currency (#PCDATA)>
-  <!ELEMENT transactionLimit (limitPerTransaction?,dailyTransactionLimit?)>
+  <!ELEMENT transactionLimit (limitPerTransaction,dailyTransactionLimit?,monthlyTransactionLimit?)>
   <!ELEMENT limitPerTransaction (#PCDATA)>
   <!ELEMENT dailyTransactionLimit (#PCDATA)>
 
   <!ATTLIST bank sortCode CDATA #REQUIRED>
   <!ATTLIST account donorId CDATA #REQUIRED>
-
+  <!--SortCodes and DonorIDs are necessary for identifying the bank and the donor who holds an account in the bank  -->
 
 ]>
+
 
 
 
