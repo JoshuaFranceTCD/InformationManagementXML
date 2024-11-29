@@ -1,30 +1,19 @@
-declare variable $selectedQuery := "specificExpiryDate"; (: Change to select query :)
+let $name := "John Smith"
+let $personInfo := //cardInfo[holderName = $personName]
 
 <results>
   {
-    if ($selectedQuery = "allHolderNames") then
-      for $holderName in //holderName
-      return <holderName>{$holderName/text()}</holderName>
-
-    else if ($selectedQuery = "allCardNumbers") then
-      for $cardNumber in //cardNumber
-      return <cardNumber>{$cardNumber/text()}</cardNumber>
-
-    else if ($selectedQuery = "specificHolderInfo") then
-      for $cardInfo in //cardInfo[holderName="John Smith"]
-      return $cardInfo
-
-    else if ($selectedQuery = "secondBillingAddress") then
-      let $billingAddress := /debitCredit/cardInfo[2]/billingAddress
-      return $billingAddress
-
-    else if ($selectedQuery = "specificExpiryDate") then
-      for $expiryDate in //cardInfo[cardNumber="9013284528563965"]/expiryDate
-      return <expiryDate>{$expiryDate/text()}</expiryDate>
-
-    else if ($selectedQuery = "allCardDetails") then
-      for $cardInfo in //cardInfo
-      return $cardInfo
-
+      <personDetails>
+        <holderName>{ $personInfo/holderName/text() }</holderName>
+        <cardNumbers>
+          { for $cardNumber in $personInfo/cardNumber return <cardNumber>{$cardNumber/text()}</cardNumber> }
+        </cardNumbers>
+        <billingAddresses>
+          { for $billingAddress in $personInfo/billingAddress return <billingAddress>{$billingAddress/text()}</billingAddress> }
+        </billingAddresses>
+        <expiryDates>
+          { for $expiryDate in $personInfo/expiryDate return <expiryDate>{$expiryDate/text()}</expiryDate> }
+        </expiryDates>
+      </personDetails>
   }
 </results>
