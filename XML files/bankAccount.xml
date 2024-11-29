@@ -25,7 +25,9 @@
 
 
 
-
+<!-- XML containing the bank details of Donors. Streamlines the payment transfer process
+      ,allows for request/deletion of user data on the system, and in exceptional circumstances
+      allows for quick refunding capabilities. -->
 <BankAccountDetails>
   <account donorId="1">
     <accountNumber>12345678</accountNumber>
