@@ -1,6 +1,6 @@
 let $name := "John Smith"
-let $personInfo := //cardInfo[holderName = $personName]
-
+let $personInfo := //cardInfo[holderName = $name]
+return
 <results>
   {
       <personDetails>
